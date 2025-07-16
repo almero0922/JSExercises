@@ -19,3 +19,19 @@ function fizzBuzz(num){
     }
 
 }
+
+function chessboard(num){
+    let board = '';
+    for (let i = 0; i < num; i++){
+        for(let i2 = 0; i2 < num; i2++){
+            if(i % 2 == 0){
+                i2 % 2 == 0 ? board+='#' : board+=' ';
+            }else{
+                i2 % 2 == 0 ? board+=' ' : board+='#';
+            }
+            
+        }
+        board+="\n"
+    }
+    console.log(board);
+}
