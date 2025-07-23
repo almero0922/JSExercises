@@ -93,3 +93,13 @@ function min(a,b){
         return min(a -1, b-1);
     }
 }
+
+function countBs(str){
+    let count = 0;
+    for(let i = 0; i < str.length; i++){
+        if(str[i] === "B"){
+            count++;
+        }
+    }
+    return count;
+}
