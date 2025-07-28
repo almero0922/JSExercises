@@ -84,22 +84,66 @@ function validate(message) {
     return false;
 }
 
-function min(a,b){
-    if(a == 0){
+function min(a, b) {
+    if (a == 0) {
         return 'parm1';
-    }else if(b == 0){
+    } else if (b == 0) {
         return 'parm2';
-    }else{
-        return min(a -1, b-1);
+    } else {
+        return min(a - 1, b - 1);
     }
 }
 
-function countBs(str){
+function countBs(str) {
     let count = 0;
-    for(let i = 0; i < str.length; i++){
-        if(str[i] === "B"){
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === "B") {
             count++;
         }
     }
     return count;
+}
+
+function countLetter(str, c) {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === c) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function amRange(start, end, step) {
+    let arr = [start];
+    let counter = start;
+    if (!step && start < end) {
+        while (counter < end) {
+            arr.push(counter + 1);
+            counter++;
+        }
+    } else if(!step && start > end){
+        while (counter > end) {
+            arr.push(counter - 1);
+            counter--;
+        }
+    }else if(step && start < end){
+        while(counter+step <= end){
+            arr.push(counter+=step); 
+        }
+    }else if(step && start > end){
+        while(counter+ step >= end){
+            arr.push(counter+=step); 
+        }
+    }
+
+    return arr;
+}
+
+function amSum(arr) {
+    let sum = 0;
+    for (let num of arr) {
+        sum += num;
+    }
+    return sum;
 }
