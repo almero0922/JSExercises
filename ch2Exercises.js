@@ -136,7 +136,6 @@ function amRange(start, end, step) {
             arr.push(counter+=step); 
         }
     }
-
     return arr;
 }
 
@@ -146,4 +145,21 @@ function amSum(arr) {
         sum += num;
     }
     return sum;
+}
+
+function reverseArray(arr){
+    let newArr = [];
+    for(let i = 1; i <= arr.length; i++){
+        newArr.push(arr[arr.length-i]);
+    }
+    return newArr;
+}
+
+function reverseArrayInPlace(arr){
+    for(let i = 0; i < Math.floor(arr.length/2); i++){
+        let el = arr[arr.length-i-1];
+        arr[arr.length-i-1]=arr[i];
+        arr[i]=el;
+    }
+    return arr;
 }
